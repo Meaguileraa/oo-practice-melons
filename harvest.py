@@ -14,7 +14,7 @@ class MelonType(object):
         self.first_harvest = first_harvest
         self.color = color
         self.is_seedless = is_seedless
-        self.is_bestseller = is_bestseller #OR 'Bestseller'
+        self.is_bestseller = is_bestseller 
         self.name = name
 
         self.pairings = []
@@ -82,7 +82,19 @@ def make_melon_type_lookup(melon_types):
 class Melon(object):
     """A melon in a melon harvest."""
 
-    # Fill in the rest
+    def __init__(self, melon_type, shape_rating, color_rating, field_harvest, michael_harvest):
+        self.melon_type = melon_type
+        self.shape_rating = shape_rating
+        self.color_rating = color_rating
+        self.field_harvest = field_harvest
+        self.michael_harvest = michael_harvest
+
+    def is_sellable(self):
+        if self.shape_rating >= 5 and self.color_rating >= 5 and self.field_harvest != 3:
+            return True 
+        else: 
+            return False 
+
     # Needs __init__ and is_sellable methods
 
 def make_melons(melon_types):
