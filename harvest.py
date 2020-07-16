@@ -57,15 +57,23 @@ def make_melon_types():
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
 
-    print(f'{self.name} pairs with\n -{self.pairings}')
+    for melon in melon_types:
+        print(f'{melon.name} pairs with')
+        for pairing in melon.pairings:
+            print(f'-{pairing}')
 
-    # Fill in the rest
 
 def make_melon_type_lookup(melon_types):
     """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
+    
+    melon_dict = {}
+    #keys are codes as strings 
+    #values are melon type instance 
 
-
-    # Fill in the rest
+    for melon in melon_types: 
+        if melon.code not in melon_dict: 
+            melon_dict[melon.code] = melon
+    return melon_dict
 
 ############
 # Part 2   #
@@ -86,6 +94,23 @@ def get_sellability_report(melons):
     """Given a list of melon object, prints whether each one is sellable."""
 
     # Fill in the rest 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
